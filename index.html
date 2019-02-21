@@ -6,24 +6,35 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Something</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Something</a>
+                </li>
             </ul>
         </div>
     </nav>
+    <div class="weather">
+        <script>
+            print httpGet();
+        </script>
+    </div>
+
 </html>
 
 <script>
+
+    function httpGet() {
+        var theUrl = "GET /locations/v1/cities/search?apikey=eAEd8x5QoJ7YgOa9vGEYb6QN5B2Dknvo&q=College%20Park&language=en-us&details=false&offset=0&alias=NoOfficialMatchFound HTTP/1.1";
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open( "GET", theUrl, false ); 
+        xmlHttp.send( null );
+        return xmlHttp.responseText;
+    }
 
 
 </script>
