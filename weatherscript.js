@@ -11,11 +11,11 @@ function displayWeather(weather) {
     var impTemp = weather[0]["Temperature"]["Imperial"]["Value"] + "<sup>o</sup>" + weather[0]["Temperature"]["Imperial"]["Unit"];
     var metTemp = weather[0]["Temperature"]["Metric"]["Value"] + "<sup>o</sup>" + weather[0]["Temperature"]["Metric"]["Unit"];
     var weatherText = weather[0]["WeatherText"];
-    var weatherIcon = "weathericons/weather" + weather[0]["WeatherIcon"] + ".png";
+    var weatherIconPath = "weathericons/weather" + weather[0]["WeatherIcon"] + ".png";
     document.writeln("<div class=\"float-right\">");
         document.writeln(impTemp + " / " + metTemp);
         document.write(weatherText);
-        document.write("<img src="+weatherIcon+">");
+        document.write("<img src="+weatherIconPath+">");
     document.writeln("</div>");
 }
 
