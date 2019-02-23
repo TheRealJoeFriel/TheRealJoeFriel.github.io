@@ -8,9 +8,14 @@ function httpGet() {
 }
 
 function displayWeather(weather) {
-    document.write(weather[0]["Temperature"]["Imperial"]["Value"] + "<sup>o</sup>" + weather[0]["Temperature"]["Imperial"]["Unit"] + " / ");
-    document.writeln(weather[0]["Temperature"]["Metric"]["Value"] + "<sup>o</sup>" + weather[0]["Temperature"]["Metric"]["Unit"] + "\n");
-    document.write(weather[0]["WeatherText"]);
-    document.write("<img src=https://developer.accuweather.com/sites/default/files/" + weather[0]["WeatherIcon"]  + "-s.png></img>");
+    var impTemp = weather[0]["Temperature"]["Imperial"]["Value"] + "<sup>o</sup>" + weather[0]["Temperature"]["Imperial"]["Unit"];
+    var metTemp = weather[0]["Temperature"]["Metric"]["Value"] + "<sup>o</sup>" + weather[0]["Temperature"]["Metric"]["Unit"];
+    var weatherText = weather[0]["WeatherText"];
+    var weatherIcon = "weathericons/weather" + weather[0]["WeatherIcon"] + ".png";
+    document.writeln("<div class=\"float-right\">");
+        document.writeln(impTemp + " / " + metTemp);
+        document.write(weatherText);
+        document.write("<img src="+weatherIcon+">");
+    document.writeln("</div>");
 }
 
