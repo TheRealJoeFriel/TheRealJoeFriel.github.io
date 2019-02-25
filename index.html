@@ -33,8 +33,23 @@
     </div>
     <div class="float-right" id="weather">
         <script>
-            var weather = JSON.parse(httpGet()); // Find a way to get current location
-            displayWeather(weather);
+            // var weather = JSON.parse(httpGet()); // Find a way to get current location
+            // displayWeather(weather);
+        </script>
+    </div>
+    <br>
+    <div class = "float-left" id="reddit"> 
+        <script>
+            var snoowrap = require('snoowrap');
+            const r = new snoowrap({
+                userAgent: "Reddit comment bot",
+                clientId: "1kZyIXFHYjVyqQ",
+                clientSecret: "42-MTH03Nuhp6XHaa9aFhQkBKIs",
+                redirect_uri: "localhost:/8080"
+            });
+
+            r.getHot().map(post => document.writeln(post.title));
+
         </script>
     </div>
 
