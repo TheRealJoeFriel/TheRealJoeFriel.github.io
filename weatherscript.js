@@ -1,5 +1,5 @@
 
-function httpGet() {
+function httpGetWeather() {
     var theUrl = "http://dataservice.accuweather.com/currentconditions/v1/333562?apikey=eAEd8x5QoJ7YgOa9vGEYb6QN5B2Dknvo&language=en-us&details=false HTTP/1.1";
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false); 

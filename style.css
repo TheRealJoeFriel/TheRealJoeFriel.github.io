@@ -1,0 +1,20 @@
+#timeDate {
+    border-color: yellowgreen;
+    border-style: solid;
+}
+
+#weather {
+    border-color: blue;
+    border-style: solid;
+}
+
+#nyt {
+    border-color: black;
+    border-style: solid;
+    font-size: 16px;
+}
+
+.abstract {
+    color: gray;
+    font-size: 10px;
+}
