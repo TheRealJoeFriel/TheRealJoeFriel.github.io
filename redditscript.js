@@ -14,9 +14,9 @@ function getFirstFiveReddit(reddit) {
 
         document.getElementById('reddit').innerHTML += "<span>";
         if (story.thumbnail != "default") {
-            document.getElementById('reddit').innerHTML += "<img src="+story.thumbnail+" alt='Unable to load image' height=50px width=50px alight='left'>"; // onerror='replaceImageWithText()'
+            document.getElementById('reddit').innerHTML += "<img src="+story.thumbnail+" alt='Unable to load image' height=45px width=45px align='left'>"; // onerror='replaceImageWithText()'
         } else {
-            document.getElementById('reddit').innerHTML += "<img src=defaulticons/redditdefault.jpg alt='Unable to load image' height=50px width=50px alight='left'>";
+            document.getElementById('reddit').innerHTML += "<img src=defaulticons/redditdefault.jpg alt='Unable to load image' height=45px width=45px align='left'>";
         }
         document.getElementById('reddit').innerHTML += "<a href="+story.url+">"+story.title+"</a>";
         document.getElementById('reddit').innerHTML += "</span><br><br>"

@@ -9,18 +9,22 @@
 }
 
 #nyt {
+    padding-top: 10px;
+    padding-left: 30px;
     border-color: black;
     border-style: solid;
     font-size: 16px;
 }
 
 #reddit {
+    padding-top: 10px;
     border-color: red;
     border-style: solid;
     font-size: 16px;
 }
 
+
 .abstract {
     color: gray;
-    font-size: 10px;
+    font-size: 12px;
 }
