@@ -44,19 +44,19 @@
     </row>
     
     <div class="row">
-        <div class = "float-left col-md-4" id="nyt"> 
-            <div id="nytstories">
-                <script>
-                    var nyt = JSON.parse(httpGetNYT());
-                    getFirstFiveNYT(nyt);
-                </script>
-            </div>
-        </div>
         <div class="col-md-4" id="reddit">
             <div id='redditStories'>
                 <script>
                     var reddit = JSON.parse(httpGetReddit());
                     getFirstFiveReddit(reddit);
+                </script>
+            </div>
+        </div>
+        <div class = "float-left col-md-4" id="nyt"> 
+            <div id="nytstories">
+                <script>
+                    var nyt = JSON.parse(httpGetNYT());
+                    getFirstFiveNYT(nyt);
                 </script>
             </div>
         </div>
