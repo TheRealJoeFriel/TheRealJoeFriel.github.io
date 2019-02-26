@@ -14,7 +14,7 @@ function getFirstFiveNYT(nyt) {
         var story = nyt["results"][i];
 
         document.getElementById("nytstories").innerHTML += "<span>"
-        document.getElementById("nytstories").innerHTML += "<img src="+story.multimedia[0].url+" alt='Image Unable to Load' height=50px width=50px align='left'>";
+        document.getElementById("nytstories").innerHTML += "<img src="+story.multimedia[0].url+" alt='Unable to load image' height=50px width=50px align='left'>";
         document.getElementById("nytstories").innerHTML += "<a href="+ story.short_url + '>' + story.title + '</a>';
         document.getElementById("nytstories").innerHTML += "<div class=\'abstract col-med-offset-1'>" + story.abstract + "</div>";
         document.getElementById("nytstories").innerHTML += "</span><br>"
