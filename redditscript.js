@@ -1,4 +1,4 @@
-
+// Returns the front page of Reddit as a JSON object
 function httpGetReddit() {
     var theUrl = "https://www.reddit.com/r/all.json";
     var xmlHttp = new XMLHttpRequest();
@@ -7,6 +7,7 @@ function httpGetReddit() {
     return xmlHttp.responseText;
 }
 
+// Retrieves the five top stories from Reddit and their thumbnails
 function getFirstFiveReddit(reddit) {
     var i;
     for (i = 0; i < 5; i++) {
@@ -26,4 +27,17 @@ function getFirstFiveReddit(reddit) {
 
 function replaceImageWithText() {
     // idk fix this
+}
+
+function getBackground(reddit) {
+    var url = 'https://www.reddit.com/r/EarthPorn/top/.json';
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", url, false); 
+    xmlHttp.send(null);
+    var topPosts = JSON.parse(xmlHttp.responseText);
+    var backgroundImage = topPosts.data.children[0].data.preview.images[0].source.url;
+    var str = backgroundImage.replace("&amp;", "&");
+    document.body.style.backgroundImage = 'url('+str+')';
+    console.log(str);
+
 }
