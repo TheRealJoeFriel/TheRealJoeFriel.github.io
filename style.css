@@ -1,6 +1,7 @@
 #timeDate {
     border-color: yellowgreen;
     border-style: solid;
+    z-index: 1;
 }
 
 #weather {
@@ -37,7 +38,10 @@
     font-size: 12px;
 }
 
-#background {
+#backgroundImage {
+    padding-right: 100px;
+    /* The image used */
+    background-image: url("defaulticons/nytdefault.png");
   
     /* Add the blur effect */
     filter: blur(8px);
@@ -47,4 +51,16 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    opacity: .80;
+    position: absolute;
+    z-index: -2;
   }
+
+  body {
+    /* background-image: url("defaulticons/nytdefault.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; */
+    z-index:2;
+  }
+

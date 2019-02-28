@@ -7,33 +7,22 @@
     <script src = "redditscript.js"></script>
     <script src = "cnnscript.js"></script>
 </head>
-    <script>
-        var currentDate = new Date();
-        var weather = JSON.parse(httpGetWeather()); // Find a way to get current location
-        var reddit = JSON.parse(httpGetReddit());
-        var nyt = JSON.parse(httpGetNYT());
-        var cnn = JSON.parse(httpGetCNN());
-    </script>
-    <div class="background" id='background'>
-        <script>
-            getBackground(reddit);
-        </script>
-    </div>
+<html lang = "en">
+<body>
     <div class="row">
         <div class="float-left col-md-6" id="timeDate">
             <script>
+                var currentDate = new Date();
                 var dayNum = currentDate.getDate();
                 var month = currentDate.getMonth();
                 var year = currentDate.getFullYear();
 
                 document.write("Today is: <br>" + getDate(dayNum, currentDate.getDay(), month, year));
             </script>
-
-
         </div>
         <div class="float-right col-md-6" id="weather">
             <script>
-                
+                var weather = JSON.parse(httpGetWeather()); // Find a way to get current location
                 displayWeather(weather);
             </script>
         </div>
@@ -43,7 +32,7 @@
         <div class="col-md-4" id="reddit">
             <div id='redditStories'>
                 <script>
-                    
+                    var reddit = JSON.parse(httpGetReddit());
                     getFirstFiveReddit(reddit);
                 </script>
             </div>
@@ -51,7 +40,7 @@
         <div class = "float-left col-md-4" id="nyt"> 
             <div id="nytstories">
                 <script>
-                    
+                    var nyt = JSON.parse(httpGetNYT());
                     getFirstFiveNYT(nyt);
                 </script>
             </div>
@@ -59,11 +48,16 @@
         <div class="col-md-4" id="cnn">
             <div id='CNNstories'>
                 <script>
-                    
+                     var cnn = JSON.parse(httpGetCNN());
                     getFirstFiveCNN(cnn);
                 </script>
             </div>
         </div>
     </div>
-
+</body>
+<div class="backgroundImage" id='backgroundImage'>
+    <script>
+        getBackground();
+    </script>
+    </div>
 </html>

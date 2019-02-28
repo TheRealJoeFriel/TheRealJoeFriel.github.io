@@ -1,6 +1,6 @@
 // Creates a connection to NYT API and returns a json object 
 function httpGetNYT() {
-    var theUrl = "https://api.nytimes.com/svc/topstories/v2/science.json?api-key=x19FApjOENkQi6yvd235Ab30dS7WXyDJ";
+    var theUrl = "https://api.nytimes.com/svc/topstories/v2/home.json?api-key=x19FApjOENkQi6yvd235Ab30dS7WXyDJ";
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", theUrl, false); 
     xmlHttp.send(null);
