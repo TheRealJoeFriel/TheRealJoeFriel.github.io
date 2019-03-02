@@ -15,6 +15,7 @@
     border-color: black;
     border-style: solid;
     font-size: 16px;
+    text-shadow: white 0px 0px 1px;
 }
 
 #nyt {
@@ -22,6 +23,7 @@
     border-color: red;
     border-style: solid;
     font-size: 16px;
+    text-shadow: white 0px 0px 1px;
 }
 
 #cnn {
@@ -30,6 +32,7 @@
     border-color: turquoise;
     border-style: solid;
     font-size: 16px;
+    text-shadow: white 0px 0px 1px;
 }
 
 
@@ -45,23 +48,24 @@
     background-image: url("defaulticons/nytdefault.png");
   
     /* Add the blur effect */
-    filter: blur(6px);
-    -webkit-filter: blur(6px);
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
   
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: .80;
+    opacity: .50;
     position: absolute;
     z-index: -2;
   }
 
-  body {
-    /* background-image: url("defaulticons/nytdefault.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; */
-    z-index:2;
-  }
+
+  html, body {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 2;
+}
 

@@ -32,15 +32,15 @@ function replaceImageWithText() {
 function getBackground() {
     var url = 'https://www.reddit.com/r/EarthPorn/top/.json';
     var xmlHttp = new XMLHttpRequest();
+
     xmlHttp.open("GET", url, false); 
     xmlHttp.send(null);
+    
     var topPosts = JSON.parse(xmlHttp.responseText);
     var backgroundImage = topPosts.data.children[0].data.preview.images[0].source.url;
     var str = backgroundImage.replace("&amp;", "&");
-    document.getElementById('backgroundImage').style.backgroundImage = 'url('+str+')';
-    document.getElementById('backgroundImage').style.width = document.documentElement.clientWidth+'px';
-    document.getElementById('backgroundImage').style.height = document.documentElement.clientHeight+'px';
-    //document.body.style.backgroundImage = 'url('+str+')';
-    //document.getElementById('background').innerHTML += '<img src='+str+' id=backgroundImage>';
 
+    document.getElementById('backgroundImage').style.backgroundImage = 'url('+str+')';
+    document.getElementById('backgroundImage').style.width = (document.documentElement.clientWidth+20)+'px';
+    document.getElementById('backgroundImage').style.height = (document.documentElement.clientHeight+10)+'px';
 }
