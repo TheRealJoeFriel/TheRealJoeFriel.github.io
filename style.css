@@ -35,6 +35,16 @@
     text-shadow: white 0px 0px 1px;
 }
 
+#gainer {
+    border-color: green;
+    border-style: solid;
+}
+
+
+#loser {
+    border-color: darkred;
+    border-style: solid;
+}
 
 .abstract {
     color: black;
@@ -65,7 +75,6 @@
     max-width: 100%;
     max-height: 100%;
     overflow-x: hidden;
-
     z-index: 2;
 }
 

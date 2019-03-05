@@ -6,9 +6,15 @@
     <script src = "nytscript.js"></script>
     <script src = "redditscript.js"></script>
     <script src = "cnnscript.js"></script>
+    <script src = "stockscript.js"></script>
 </head>
 <html lang = "en">
 <body>
+    <div class="backgroundImage" id='backgroundImage'>
+        <script>
+            getBackground();
+        </script>
+    </div>
     <div class="row">
         <div class="float-left col-md-6" id="timeDate">
             <script>
@@ -26,7 +32,7 @@
                 displayWeather(weather);
             </script>
         </div>
-    </row>
+    </div>
     
     <div class="row">
         <div class="col-md-4" id="reddit">
@@ -54,10 +60,24 @@
             </div>
         </div>
     </div>
-</body>
-<div class="backgroundImage" id='backgroundImage'>
-    <script>
-        getBackground();
-    </script>
+
+    <div class='row'>
+        <div class="float-left col-md-6" id='gainer'>
+            <div id='gainerStock'>
+                <script>
+                    var gainerStocks = JSON.parse(httpGetStocks("https://cloud.iexapis.com/beta/stock/market/list/gainers?token=pk_bfdc9d9be6a242bab1497e23d22fe997"));
+                    var chart = generateStockSummary(gainerStocks, "gainerStock");
+                </script>
+            </div>
+        </div>
+        <div class="col-md-6" id='loser'>
+            <div id='loserStock'>
+                <script>
+                    var loserStocks = JSON.parse(httpGetStocks("https://cloud.iexapis.com/beta/stock/market/list/losers?token=pk_bfdc9d9be6a242bab1497e23d22fe997"));
+                    var chart = generateStockSummary(loserStocks, "loserStock");
+                </script>
+            </div>
+        </div>
     </div>
+</body>
 </html>
