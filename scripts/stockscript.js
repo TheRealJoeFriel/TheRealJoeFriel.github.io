@@ -43,6 +43,8 @@ function generateStockChart(stocks, id) {
     var sym = stocks[0].symbol;
     var stockPrices = [];
     var xLabel = [];
+    var color;
+    var backgroundColor;
 
     // Get the stock data for the gainer or loser
     var chartURL = "https://cloud.iexapis.com/beta/stock/"+sym+"/chart/1m?token=pk_bfdc9d9be6a242bab1497e23d22fe997"
@@ -57,20 +59,32 @@ function generateStockChart(stocks, id) {
         xLabel.push(chart[i].date.substr(5));
     }
 
+    if (id == 'gainerChart') {
+        color = '#32CD32';
+        backgroundColor = 'rgba(50, 205, 50, .3)';
+    } else {
+        color = '#FF0000';
+        backgroundColor = 'rgba(255, 0, 0, .3)'
+    }
+
     var ctx = document.getElementById(id);
     new Chart(ctx, {
         type: 'line',
         data: {
             labels: xLabel,
-            data: stockPrices,
-            borderColor: 'red',
+            datasets: [{
+                label: name,
+                data: stockPrices,
+                borderColor: color,
+                backgroundColor: backgroundColor,
+            }],
         },
         options: {
             scales: {
                 yAxes: [{
                     ticks: {
                         min: 0,
-                        stepSize: 50,
+                        stepSize: 5,
                     },
                     scaleLabel: {
                         display: true,
@@ -78,6 +92,7 @@ function generateStockChart(stocks, id) {
                     }
                 }],
                 xAxes: [{
+                    position: 'bottom',
                     scaleLabel: {
                       display: true,
                       labelString: 'Date'

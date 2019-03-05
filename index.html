@@ -64,24 +64,22 @@
 
     <div class='row'>
         <div class="float-left col-md-6" id='gainer'>
-            <div id='gainerStock'>
-                <canvas id='gainerChart' width=200px height=200px></canvas>
-                <script>
-                    var gainerStocks = JSON.parse(httpGetStocks("https://cloud.iexapis.com/beta/stock/market/list/gainers?token=pk_bfdc9d9be6a242bab1497e23d22fe997"));
-                    generateStockSummary(gainerStocks, "gainerStock");
-                    generateStockChart(gainerStocks, 'gainerChart');
-                </script>
-            </div>
+            <div class="float-left col-md-4" id='gainerStock'></div>
+            <canvas class="col-md-8 float-right" id='gainerChart' width=400px height=300px></canvas>
+            <script>
+                var gainerStocks = JSON.parse(httpGetStocks("https://cloud.iexapis.com/beta/stock/market/list/gainers?token=pk_bfdc9d9be6a242bab1497e23d22fe997"));
+                generateStockSummary(gainerStocks, "gainerStock");
+                generateStockChart(gainerStocks, 'gainerChart');
+            </script>
         </div>
         <div class="col-md-6" id='loser'>
-            <div id='loserStock'>
-                <canvas id='loserChart' width=200px height=200px></canvas>
-                <script>
-                    var loserStocks = JSON.parse(httpGetStocks("https://cloud.iexapis.com/beta/stock/market/list/losers?token=pk_bfdc9d9be6a242bab1497e23d22fe997"));
-                    generateStockSummary(loserStocks, "loserStock");
-                    generateStockChart(loserStocks, 'loserChart');
-                </script>
-            </div>
+            <div class="float-left col-md-4" id='loserStock' class='float-left'></div>
+            <canvas class="col-md-8 float-right" id='loserChart' width=400px height=300px></canvas>
+            <script>
+                var loserStocks = JSON.parse(httpGetStocks("https://cloud.iexapis.com/beta/stock/market/list/losers?token=pk_bfdc9d9be6a242bab1497e23d22fe997"));
+                generateStockSummary(loserStocks, "loserStock");
+                generateStockChart(loserStocks, 'loserChart');
+            </script>
         </div>
     </div>
 </body>
