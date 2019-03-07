@@ -81,10 +81,15 @@ function generateStockChart(stock, id) {
 
     var chart = JSON.parse(xmlHttp.responseText);
 
+
+    stockPrices.push(stock.latestPrice);
+    xLabel.push("Today");
+
     for (var i = 18; i >= 0; i--) {
         stockPrices.push(chart[i].close);
         xLabel.push(chart[i].date.substr(5));
     }
+
 
     if (id == 'gainerChart') {
         color = '#32CD32';

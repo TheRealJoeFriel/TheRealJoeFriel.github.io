@@ -14,9 +14,9 @@ function displayWeather(weather) {
     var weatherText = weather[0]["WeatherText"];
     var weatherIconPath = "weathericons/weather" + weather[0]["WeatherIcon"] + ".png";
     document.writeln("<div class=\"float-right\">");
-        document.writeln(impTemp + " / " + metTemp + "<br>");
+        document.writeln("<h3>" +impTemp + " / " + metTemp + "<br>");
         document.write(weatherText);
-        document.write("<img src="+weatherIconPath+">");
+        document.write("<img src="+weatherIconPath+"></h3>");
     document.writeln("</div>");
 }
 
