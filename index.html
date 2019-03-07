@@ -68,8 +68,9 @@
             <canvas class="col-md-8 float-right" id='gainerChart' width=400px height=300px></canvas>
             <script>
                 var gainerStocks = JSON.parse(httpGetStocks("https://cloud.iexapis.com/beta/stock/market/list/gainers?token=pk_bfdc9d9be6a242bab1497e23d22fe997"));
-                generateStockSummary(gainerStocks, "gainerStock");
-                generateStockChart(gainerStocks, 'gainerChart');
+                var gainer = getTopGainer(gainerStocks);
+                generateStockSummary(gainer, "gainerStock");
+                generateStockChart(gainer, 'gainerChart');
             </script>
         </div>
         <div class="col-md-6" id='loser'>
@@ -77,8 +78,9 @@
             <canvas class="col-md-8 float-right" id='loserChart' width=400px height=300px></canvas>
             <script>
                 var loserStocks = JSON.parse(httpGetStocks("https://cloud.iexapis.com/beta/stock/market/list/losers?token=pk_bfdc9d9be6a242bab1497e23d22fe997"));
-                generateStockSummary(loserStocks, "loserStock");
-                generateStockChart(loserStocks, 'loserChart');
+                var loser = getTopLoser(loserStocks);
+                generateStockSummary(loser, "loserStock");
+                generateStockChart(loser, 'loserChart');
             </script>
         </div>
     </div>

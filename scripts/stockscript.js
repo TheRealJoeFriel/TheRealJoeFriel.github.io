@@ -5,13 +5,40 @@ function httpGetStocks(theUrl) {
     return xmlHttp.responseText;
 }
 
-function generateStockSummary(stocks, id) {
+function getTopGainer(stocks) {
+    var i;
+    var maxIndex = 0;
+    var max = Number.NEGATIVE_INFINITY;
+    for (i = 0; i < stocks.length; i++) {
+        if (stocks[i].latestPrice > max) {
+            max = stocks[i].latestPrice;
+            maxIndex = i;
+        }
+    }
+    return stocks[maxIndex];
+}
 
-    var name = stocks[0].companyName;
-    var sym = stocks[0].symbol;
-    var price = stocks[0].latestPrice;
-    var change = stocks[0].change.toString();
-    var changePerc = stocks[0].changePercent;
+function getTopLoser(stocks) {
+    var i;
+    var minIndex = 0;
+    var min = Number.POSITIVE_INFINITY;
+    for (i = 0; i < stocks.length; i++) {
+        if (stocks[i].latestPrice < min) {
+            max = stocks[i].latestPrice;
+            maxIndex = i;
+        }
+    }
+    return stocks[minIndex];
+
+}
+
+function generateStockSummary(stock, id) {
+
+    var name = stock.companyName;
+    var sym = stock.symbol;
+    var price = stock.latestPrice;
+    var change = stock.change.toString();
+    var changePerc = stock.changePercent;
 
 
     document.getElementById(id).innerHTML += name + " ";
@@ -38,9 +65,9 @@ function formatLayout() {
 
 }
 
-function generateStockChart(stocks, id) {
-    var name = stocks[0].companyName;
-    var sym = stocks[0].symbol;
+function generateStockChart(stock, id) {
+    var name = stock.companyName;
+    var sym = stock.symbol;
     var stockPrices = [];
     var xLabel = [];
     var color;
@@ -71,10 +98,10 @@ function generateStockChart(stocks, id) {
     new Chart(ctx, {
         type: 'line',
         data: {
-            labels: xLabel,
+            labels: xLabel.reverse(),
             datasets: [{
                 label: name,
-                data: stockPrices,
+                data: stockPrices.reverse(),
                 borderColor: color,
                 backgroundColor: backgroundColor,
             }],
