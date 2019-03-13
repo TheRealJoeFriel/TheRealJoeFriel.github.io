@@ -59,9 +59,10 @@
     </div>
 
     <div class='row'>
-        <div class="float-left col-md-6" id='gainer'>
+        <div class="float-left col-md-6 stocks" id='gainer'>
+            <h5 style='text-align: center'>Today's Top Gainer:</h5><br>
             <div class="float-left col-md-4" id='gainerStock'></div>
-            <canvas class="col-md-8 float-right" id='gainerChart' width=350px height=250px></canvas>
+            <canvas class="col-md-8 float-right" id='gainerChart' width=300px height=175px></canvas>
             <script>
                 var gainerStocks = JSON.parse(httpGetStocks("https://cloud.iexapis.com/beta/stock/market/list/gainers?token=pk_bfdc9d9be6a242bab1497e23d22fe997"));
                 var gainer = getTopGainer(gainerStocks);
@@ -69,9 +70,10 @@
                 generateStockChart(gainer, 'gainerChart');
             </script>
         </div>
-        <div class="col-md-6" id='loser'>
+        <div class="col-md-6 stocks" id='loser'>
+            <h5 style='text-align: center'>Today's Top Loser:</h5><br>
             <div class="float-left col-md-4" id='loserStock' class='float-left'></div>
-            <canvas class="col-md-8 float-right" id='loserChart' width=350px height=250px></canvas>
+            <canvas class="col-md-8 float-right" id='loserChart' width=300px height=175px></canvas>
             <script>
                 var loserStocks = JSON.parse(httpGetStocks("https://cloud.iexapis.com/beta/stock/market/list/losers?token=pk_bfdc9d9be6a242bab1497e23d22fe997"));
                 var loser = getTopLoser(loserStocks);

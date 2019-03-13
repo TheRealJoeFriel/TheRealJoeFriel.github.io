@@ -14,9 +14,9 @@ function displayWeather(weather) {
     var weatherText = weather[0]["WeatherText"];
     var weatherIconPath = "weathericons/weather" + weather[0]["WeatherIcon"] + ".png";
     document.writeln("<div class=\"float-right\">");
-        document.writeln("<h1 class='display-4'>" +impTemp + " / " + metTemp + "<br>");
-        document.write(weatherText);
-        document.write("<img src="+weatherIconPath+" height=75px width=125px></h1>");
+        document.write("<h1 class='display-4'>" +impTemp + " | " + metTemp + "</h1>");
+        document.write("<h1 class='display-4'>" + weatherText);
+        document.write("<img src="+weatherIconPath+" height=60px width=100px></h1>");
     document.writeln("</div>");
 }
 

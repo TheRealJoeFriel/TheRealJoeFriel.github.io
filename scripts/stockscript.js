@@ -41,15 +41,16 @@ function generateStockSummary(stock, id) {
     var changePerc = stock.changePercent;
 
 
-    document.getElementById(id).innerHTML += name + " ";
-    document.getElementById(id).innerHTML += sym + "<br>";
-    document.getElementById(id).innerHTML += "$" + price + " ";
+    document.getElementById(id).innerHTML += name; 
+    document.getElementById(id).innerHTML += " (" + sym + ")<br>";
+    document.getElementById(id).innerHTML += "$" + price + "<br>";
     if (change.toString()[0] == "-") {
-        document.getElementById(id).innerHTML += "-$" + change.substr(1) + " ";
+        document.getElementById(id).innerHTML += "-$" + change.substr(1) + " (" + Math.floor(changePerc*100)/100 + "%)";
     } else {
-        document.getElementById(id).innerHTML += "$" + change + " ";
+        document.getElementById(id).innerHTML += "+$" + change + " (+" + Math.floor(changePerc*100)/100 + "%)";
+
     }
-    document.getElementById(id).innerHTML += changePerc + "% ";
+    
 }
 
 function formatLayout() {
@@ -115,7 +116,7 @@ function generateStockChart(stock, id) {
             scales: {
                 yAxes: [{
                     ticks: {
-                        min: 0,
+                        min: 10,
                         stepSize: 5,
                     },
                     scaleLabel: {

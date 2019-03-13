@@ -14,19 +14,17 @@ function getFirstFiveReddit(reddit) {
         var story = reddit.data.children[i].data
 
         document.getElementById('reddit').innerHTML += "<span>";
-        if (story.thumbnail != "default" && story.is_self != true) {
-            document.getElementById('reddit').innerHTML += "<img src="+story.thumbnail+" alt='Unable to load image' height=45px width=45px align='left'>"; // onerror='replaceImageWithText()'
-        } else {
+        if (story.thumbnail == "default" || story.is_self == true) {
             document.getElementById('reddit').innerHTML += "<img src=defaulticons/redditdefault.jpg alt='Unable to load image' height=45px width=45px align='left'>";
+        } else if (story.thumbnail == "nsfw") {
+            document.getElementById('reddit').innerHTML += "<img src=defaulticons/redditNSFW.png alt='Unable to load image' height=45px width=45px align='left'>";
+        } else {
+            document.getElementById('reddit').innerHTML += "<img src="+story.thumbnail+" alt='Unable to load image' height=45px width=45px align='left'>";
         }
         document.getElementById('reddit').innerHTML += "<a href="+story.url+">"+story.title+"</a>";
         document.getElementById('reddit').innerHTML += "</span><br><br>"
 
     }
-}
-
-function replaceImageWithText() {
-    // idk fix this
 }
 
 function getBackground() {
