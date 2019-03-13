@@ -20,11 +20,7 @@
         <div class="float-left col-md-6" id="timeDate">
             <script>
                 var currentDate = new Date();
-                var dayNum = currentDate.getDate();
-                var month = currentDate.getMonth();
-                var year = currentDate.getFullYear();
-
-                document.write("<h3>Today is: <br>" + getDate(dayNum, currentDate.getDay(), month, year) + "</h3>");
+                getDate(currentDate);
             </script>
         </div>
         <div class="float-right col-md-6" id="weather">
