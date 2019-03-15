@@ -1,10 +1,11 @@
 #timeDate {
     padding-top: 15px;
+    text-align: center;
 }
 
 #weather {
     padding-top: 15px;
-    text-align: right;
+    text-align: center;
 }
 
 .row.vdivide [class*='col-']:not(:last-child):after {

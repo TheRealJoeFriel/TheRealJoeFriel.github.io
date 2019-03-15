@@ -13,7 +13,7 @@ function displayWeather(weather) {
     var metTemp = weather[0]["Temperature"]["Metric"]["Value"] + "<sup>o</sup>" + weather[0]["Temperature"]["Metric"]["Unit"];
     var weatherText = weather[0]["WeatherText"];
     var weatherIconPath = "weathericons/weather" + weather[0]["WeatherIcon"] + ".png";
-    document.writeln("<div class=\"float-right\">");
+    document.writeln("<div>");
         document.write("<h1 class='display-4'>" +impTemp + " | " + metTemp + "</h1>");
         document.write("<h1 class='display-4'>" + weatherText);
         document.write("<img src="+weatherIconPath+" height=60px width=100px></h1>");
