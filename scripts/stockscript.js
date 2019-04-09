@@ -87,17 +87,23 @@ function generateStockChart(stock, id) {
     xLabel.push("Today");
 
     for (var i = 18; i >= 0; i--) {
-        stockPrices.push(chart[i].close);
-        xLabel.push(chart[i].date.substr(5));
+        if (chart[i] != undefined) {
+            stockPrices.push(chart[i].close);
+            xLabel.push(chart[i].date.substr(5));
+        }
     }
+
+    var numberPrices = stockPrices.map(Number)
+    var min = Math.min(...numberPrices);
+    var max = Math.max(...numberPrices);
 
 
     if (id == 'gainerChart') {
         color = '#32CD32';
-        backgroundColor = 'rgba(50, 205, 50, .3)';
+        backgroundColor = 'rgba(50, 205, 50, .5)';
     } else {
         color = '#FF0000';
-        backgroundColor = 'rgba(255, 0, 0, .3)'
+        backgroundColor = 'rgba(255, 0, 0, .5)'
     }
 
     var ctx = document.getElementById(id);
@@ -116,8 +122,8 @@ function generateStockChart(stock, id) {
             scales: {
                 yAxes: [{
                     ticks: {
-                        min: 10,
-                        stepSize: 5,
+                        min: Math.floor(min),
+                        stepSize: Math.ceil(((max-min)/4)),
                     },
                     scaleLabel: {
                         display: true,

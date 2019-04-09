@@ -33,6 +33,10 @@
     
     <div class="row vdivide">
         <div class="col-md-4" id="reddit">
+            <div class = "col-md-8 offset-md-2" style="padding-bottom: 3px">
+                <img src='defaulticons/redditbanner.png' alt='Unable to load image.' class ='img-fluid'>
+            </div>
+            <hr>
             <div id='redditStories'>
                 <script>
                     var reddit = JSON.parse(httpGetReddit());
@@ -41,6 +45,10 @@
             </div>
         </div>
         <div class = "float-left col-md-4" id="nyt"> 
+            <div class = "col-md-8 offset-md-2">
+                <img src='defaulticons/nytbanner.png' alt='Unable to load image.' class ='img-fluid'>
+            </div>
+            <hr>
             <div id="nytstories">
                 <script>
                     var nyt = JSON.parse(httpGetNYT());
@@ -49,6 +57,10 @@
             </div>
         </div>
         <div class="col-md-4" id="cnn">
+            <div class = "col-md-8 offset-md-2">
+                <img src='defaulticons/cnnbanner.png' alt='Unable to load image.' class ='cnnBanner img-fluid'>
+            </div>
+            <hr>
             <div id='CNNstories'>
                 <script>
                      var cnn = JSON.parse(httpGetCNN());
