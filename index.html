@@ -11,27 +11,23 @@
 </head>
 <html lang = "en">
 <body>
-    <div class="backgroundImage" id='backgroundImage'>
-        <script>
-            getBackground();
-        </script>
-    </div>
-    <div class="row">
-        <div class="float-left col-md-6" id="timeDate">
+    
+    <div class="row" id ='topRow'>
+        <div id="timeDate">
             <script>
+                getBackground();
                 var currentDate = new Date();
                 getDate(currentDate);
-            </script>
-        </div>
-        <div class="float-right col-md-6" id="weather">
-            <script>
                 var weather = JSON.parse(httpGetWeather()); // Find a way to get current location
                 displayWeather(weather);
             </script>
         </div>
+        <!-- <div id='bottom_fade'> -->
+            <img src='defaulticons/bottom-fade.png' id='bottom_fade' width=100% height=10%>
+        <!-- </div> -->
     </div>
     
-    <div class="row vdivide">
+    <div class="row vdivide" id="news">
         <div class="col-md-4" id="reddit">
             <div class = "col-md-8 offset-md-2" style="padding-bottom: 3px">
                 <img src='defaulticons/redditbanner.png' alt='Unable to load image.' class ='img-fluid'>
@@ -70,7 +66,7 @@
         </div>
     </div>
 
-    <div class='row'>
+    <div class='row' id="stocks">
         <div class="float-left col-md-6 stocks" id='gainer'>
             <h5 style='text-align: center'>Today's Top Gainer:</h5><br>
             <div class="float-left col-md-4" id='gainerStock'></div>

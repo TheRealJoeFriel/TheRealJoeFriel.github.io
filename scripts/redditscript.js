@@ -38,7 +38,7 @@ function getBackground() {
     var backgroundImage = topPosts.data.children[0].data.preview.images[0].source.url;
     var str = backgroundImage.replace("&amp;", "&");
 
-    document.getElementById('backgroundImage').style.backgroundImage = 'url('+str+')';
-    document.getElementById('backgroundImage').style.width = (document.documentElement.clientWidth+20)+'px';
-    document.getElementById('backgroundImage').style.height = (document.documentElement.clientHeight+10)+'px';
+    document.getElementById('topRow').style.backgroundImage = 'url('+str+')';
+    // document.getElementById('topRow').style.width = (document.documentElement.clientWidth+20)+'px';
+    // document.getElementById('topRow').style.height = (document.getElementById('topRow').style.height/3)+'px';
 }
