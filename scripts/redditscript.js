@@ -39,6 +39,4 @@ function getBackground() {
     var str = backgroundImage.replace("&amp;", "&");
 
     document.getElementById('topRow').style.backgroundImage = 'url('+str+')';
-    // document.getElementById('topRow').style.width = (document.documentElement.clientWidth+20)+'px';
-    // document.getElementById('topRow').style.height = (document.getElementById('topRow').style.height/3)+'px';
 }
